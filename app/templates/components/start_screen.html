@@ -1,15 +1,16 @@
 <div id="game-container">
-<div class="flex flex-col items-center justify-center min-h-full p-6 bg-gray-50">
-    <div class="text-center max-w-sm">
-        <h1 class="text-4xl font-bold text-gray-900 mb-2">Soc Ops</h1>
-        <p class="text-lg text-gray-600 mb-8">Social Bingo</p>
+<div class="page-shell">
+    <div class="coffee-panel text-center">
+        <span class="brand-kicker stagger-1">Fresh Round</span>
+        <h1 class="brand-title stagger-1">Soc Ops Coffee House</h1>
+        <p class="brand-subtitle stagger-2">A warm social bingo blend for your team break.</p>
 
-        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 mb-8">
-            <h2 class="font-semibold text-gray-800 mb-3">How to play</h2>
-            <ul class="text-left text-gray-600 text-sm space-y-2">
-                <li>• Find people who match the questions</li>
-                <li>• Tap a square when you find a match</li>
-                <li>• Get 5 in a row to win!</li>
+        <div class="rules-card stagger-2">
+            <h2>House Rules</h2>
+            <ul class="rules-list">
+                <li>Find someone who matches each menu prompt.</li>
+                <li>Tap the tile to mark your discovery.</li>
+                <li>Serve 5 in a row to brew a BINGO.</li>
             </ul>
         </div>
 
@@ -17,8 +18,8 @@
             hx-post="/start"
             hx-target="#game-container"
             hx-swap="outerHTML"
-            class="w-full bg-accent text-white font-semibold py-4 px-8 rounded-lg text-lg active:bg-accent-light transition-colors">
-            Start Game
+            class="btn-primary stagger-3">
+            Brew a New Round
         </button>
     </div>
 </div>
