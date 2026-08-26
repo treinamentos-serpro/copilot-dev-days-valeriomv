@@ -1,26 +1,68 @@
 <div id="game-container">
 <div class="page-shell">
-    <div class="coffee-panel text-center">
-        <span class="brand-kicker stagger-1">Fresh Round</span>
-        <h1 class="brand-title stagger-1">Soc Ops Coffee House</h1>
-        <p class="brand-subtitle stagger-2">A warm social bingo blend for your team break.</p>
+    <div class="start-layout stagger-1">
 
-        <div class="rules-card stagger-2">
-            <h2>House Rules</h2>
-            <ul class="rules-list">
-                <li>Find someone who matches each menu prompt.</li>
-                <li>Tap the tile to mark your discovery.</li>
-                <li>Serve 5 in a row to brew a BINGO.</li>
-            </ul>
+        <!-- Decorative preview board (non-interactive, aria-hidden) -->
+        <div class="preview-board-wrap" aria-hidden="true">
+            <div class="preview-board" role="presentation">
+                <!-- Row 1 -->
+                <div class="preview-tile preview-tile--plain">Find Someone</div>
+                <div class="preview-tile preview-tile--marked">Loves Coffee ✓</div>
+                <div class="preview-tile preview-tile--plain">Has a Pet</div>
+                <div class="preview-tile preview-tile--plain">Speaks 2+ Languages</div>
+                <div class="preview-tile preview-tile--marked">Born Abroad ✓</div>
+                <!-- Row 2 -->
+                <div class="preview-tile preview-tile--plain">Plays an Instrument</div>
+                <div class="preview-tile preview-tile--plain">Early Riser</div>
+                <div class="preview-tile preview-tile--marked">Works Remote ✓</div>
+                <div class="preview-tile preview-tile--plain">Loves Hiking</div>
+                <div class="preview-tile preview-tile--plain">Has a Side Project</div>
+                <!-- Row 3 — winning middle row -->
+                <div class="preview-tile preview-tile--win">Reads Daily ★</div>
+                <div class="preview-tile preview-tile--win">Tea Drinker ★</div>
+                <div class="preview-tile preview-tile--free">FREE<br>SPACE</div>
+                <div class="preview-tile preview-tile--win">Night Owl ★</div>
+                <div class="preview-tile preview-tile--win">Cat Person ★</div>
+                <!-- Row 4 -->
+                <div class="preview-tile preview-tile--plain">Cooks at Home</div>
+                <div class="preview-tile preview-tile--plain">Gym Regular</div>
+                <div class="preview-tile preview-tile--marked">Takes Notes ✓</div>
+                <div class="preview-tile preview-tile--plain">Has a Green Thumb</div>
+                <div class="preview-tile preview-tile--plain">Loves Sushi</div>
+                <!-- Row 5 -->
+                <div class="preview-tile preview-tile--plain">Night Runner</div>
+                <div class="preview-tile preview-tile--marked">Wears Glasses ✓</div>
+                <div class="preview-tile preview-tile--plain">Has Tattoos</div>
+                <div class="preview-tile preview-tile--plain">Hates Mondays</div>
+                <div class="preview-tile preview-tile--plain">Can Juggle</div>
+            </div>
+            <p class="preview-label">Sample board — yours will be different</p>
         </div>
 
-        <button
-            hx-post="/start"
-            hx-target="#game-container"
-            hx-swap="outerHTML"
-            class="btn-primary stagger-3">
-            Brew a New Round
-        </button>
+        <!-- Content panel -->
+        <div class="start-content">
+            <span class="brand-kicker">Fresh Round</span>
+            <h1 class="brand-title">Soc Ops Coffee House</h1>
+            <p class="brand-subtitle">A warm social bingo blend for your team break. Find people who match each tile, mark your discoveries, and serve five in a row to brew a BINGO.</p>
+
+            <div class="rules-card">
+                <h2>House Rules</h2>
+                <ul class="rules-list">
+                    <li>Find someone who matches each menu prompt.</li>
+                    <li>Tap the tile to mark your discovery.</li>
+                    <li>Serve 5 in a row to brew a BINGO.</li>
+                </ul>
+            </div>
+
+            <button
+                hx-post="/start"
+                hx-target="#game-container"
+                hx-swap="outerHTML"
+                class="btn-primary">
+                Brew a New Round
+            </button>
+        </div>
+
     </div>
 </div>
 </div>
