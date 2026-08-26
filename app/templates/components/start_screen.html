@@ -1,26 +1,35 @@
 <div id="game-container">
-<div class="page-shell">
-    <div class="coffee-panel text-center">
-        <span class="brand-kicker stagger-1">Fresh Round</span>
-        <h1 class="brand-title stagger-1">Soc Ops Coffee House</h1>
-        <p class="brand-subtitle stagger-2">A warm social bingo blend for your team break.</p>
+<div class="landing-shell">
+    <article class="landing-card">
+        <div class="landing-accent-bar stagger-1"></div>
 
-        <div class="rules-card stagger-2">
-            <h2>House Rules</h2>
-            <ul class="rules-list">
-                <li>Find someone who matches each menu prompt.</li>
-                <li>Tap the tile to mark your discovery.</li>
-                <li>Serve 5 in a row to brew a BINGO.</li>
-            </ul>
+        <header class="landing-header">
+            <span class="brand-kicker stagger-1">Fresh Round</span>
+            <h1 class="landing-title stagger-1">Soc&nbsp;Ops<br>Coffee<br>House</h1>
+        </header>
+
+        <div class="landing-body">
+            <p class="landing-lead stagger-2">
+                A social bingo game for team breaks — find someone who matches each prompt, mark your tile, get&nbsp;5&nbsp;in&nbsp;a&nbsp;row.
+            </p>
+
+            <div class="rule-strip stagger-2" aria-label="House Rules">
+                <h2 class="rule-strip-label">House Rules</h2>
+                <ol class="rule-strip-list">
+                    <li>Find someone who matches each menu prompt.</li>
+                    <li>Tap the tile to mark your discovery.</li>
+                    <li>Serve 5 in a row to brew a BINGO.</li>
+                </ol>
+            </div>
+
+            <button
+                hx-post="/start"
+                hx-target="#game-container"
+                hx-swap="outerHTML"
+                class="btn-primary stagger-3">
+                Brew a New Round
+            </button>
         </div>
-
-        <button
-            hx-post="/start"
-            hx-target="#game-container"
-            hx-swap="outerHTML"
-            class="btn-primary stagger-3">
-            Brew a New Round
-        </button>
-    </div>
+    </article>
 </div>
 </div>
