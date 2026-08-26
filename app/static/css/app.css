@@ -90,6 +90,180 @@ button:disabled {
     animation: rise-in 420ms ease-out both;
 }
 
+/* ── Editorial landing layout ───────────────────────────────────── */
+
+.landing-shell {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.landing-card {
+    width: 100%;
+    max-width: 30rem;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    border: 1px solid rgba(67, 40, 24, 0.18);
+    background: linear-gradient(160deg, rgba(255, 249, 239, 0.96) 0%, rgba(245, 228, 197, 0.96) 100%);
+    box-shadow:
+        0 2px 0 0 rgba(176, 137, 104, 0.3) inset,
+        0 22px 40px -20px var(--coffee-shadow);
+    backdrop-filter: blur(4px);
+    display: grid;
+    grid-template-columns: 0.38fr 1fr;
+    grid-template-rows: auto 1fr;
+}
+
+.landing-accent-bar {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    background:
+        repeating-linear-gradient(
+            -45deg,
+            #c28048 0px,
+            #c28048 4px,
+            #9c6644 4px,
+            #9c6644 12px,
+            #7f5539 12px,
+            #7f5539 16px,
+            #b08968 16px,
+            #b08968 24px
+        );
+    position: relative;
+}
+
+.landing-accent-bar::after {
+    content: "☕";
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.6rem;
+    filter: drop-shadow(0 2px 3px rgba(67, 40, 24, 0.35));
+}
+
+.landing-header {
+    grid-column: 2;
+    grid-row: 1;
+    padding: 1.5rem 1.4rem 0.75rem;
+    border-bottom: 1px solid rgba(67, 40, 24, 0.1);
+}
+
+.landing-title {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--coffee-espresso);
+    margin-top: 0.55rem;
+}
+
+.landing-body {
+    grid-column: 2;
+    grid-row: 2;
+    padding: 0.9rem 1.4rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.95rem;
+}
+
+.landing-lead {
+    margin: 0;
+    color: #6e4b39;
+    font-size: 0.94rem;
+    line-height: 1.55;
+}
+
+.rule-strip {
+    border-left: 3px solid var(--coffee-caramel);
+    padding: 0.65rem 0.85rem;
+    border-radius: 0 0.6rem 0.6rem 0;
+    background: rgba(255, 252, 245, 0.82);
+}
+
+.rule-strip-label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #704527;
+    margin-bottom: 0.45rem;
+}
+
+.rule-strip-list {
+    margin: 0;
+    padding-left: 1.1em;
+    color: #694734;
+    font-size: 0.875rem;
+    line-height: 1.55;
+}
+
+.rule-strip-list li + li {
+    margin-top: 0.25rem;
+}
+
+@media (max-width: 480px) {
+    .landing-card {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
+    }
+
+    .landing-accent-bar {
+        grid-column: 1;
+        grid-row: 1;
+        height: 0.6rem;
+        background:
+            repeating-linear-gradient(
+                90deg,
+                #c28048 0px,
+                #c28048 4px,
+                #9c6644 4px,
+                #9c6644 12px,
+                #7f5539 12px,
+                #7f5539 16px,
+                #b08968 16px,
+                #b08968 24px
+            );
+    }
+
+    .landing-accent-bar::after {
+        display: none;
+    }
+
+    .landing-header {
+        grid-column: 1;
+        grid-row: 2;
+        padding: 1.2rem 1.2rem 0.6rem;
+    }
+
+    .landing-body {
+        grid-column: 1;
+        grid-row: 3;
+        padding: 0.75rem 1.2rem 1.2rem;
+    }
+
+    .landing-title {
+        font-size: clamp(1.75rem, 10vw, 2.4rem);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .stagger-1,
+    .stagger-2,
+    .stagger-3,
+    .landing-card,
+    .coffee-panel {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* ── End editorial landing layout ───────────────────────────────── */
+
 .brand-kicker {
     display: inline-block;
     font-size: 0.72rem;
@@ -164,6 +338,11 @@ button:disabled {
 
 .btn-primary:hover {
     transform: translateY(-1px);
+}
+
+.btn-primary:focus-visible {
+    outline: 3px solid var(--coffee-gold);
+    outline-offset: 3px;
 }
 
 .btn-primary:active {
