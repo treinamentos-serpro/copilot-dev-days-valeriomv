@@ -3,22 +3,39 @@
     <div class="coffee-panel text-center">
         <span class="brand-kicker stagger-1">Fresh Round</span>
         <h1 class="brand-title stagger-1">Soc Ops Coffee House</h1>
-        <p class="brand-subtitle stagger-2">A warm social bingo blend for your team break.</p>
+        <p class="brand-subtitle stagger-2">Who in the room has done this? Go find out.</p>
 
-        <div class="rules-card stagger-2">
+        <div class="prompt-chips stagger-2" aria-label="Sample discovery prompts">
+            <span class="prompt-chip">☕ Runs on cold brew</span>
+            <span class="prompt-chip">✈️ Visited 3+ countries</span>
+            <span class="prompt-chip">🎸 Plays an instrument</span>
+            <span class="prompt-chip">🌱 Has a plant collection</span>
+            <span class="prompt-chip">🍕 Has a strong pizza opinion</span>
+        </div>
+
+        <div class="rules-card stagger-3">
             <h2>House Rules</h2>
-            <ul class="rules-list">
-                <li>Find someone who matches each menu prompt.</li>
-                <li>Tap the tile to mark your discovery.</li>
-                <li>Serve 5 in a row to brew a BINGO.</li>
-            </ul>
+            <ol class="rules-steps">
+                <li>
+                    <span class="step-num">1</span>
+                    <span class="step-text">Find someone who matches each menu prompt.</span>
+                </li>
+                <li>
+                    <span class="step-num">2</span>
+                    <span class="step-text">Tap the tile to mark your discovery.</span>
+                </li>
+                <li>
+                    <span class="step-num">3</span>
+                    <span class="step-text">Serve 5 in a row to brew a BINGO.</span>
+                </li>
+            </ol>
         </div>
 
         <button
             hx-post="/start"
             hx-target="#game-container"
             hx-swap="outerHTML"
-            class="btn-primary stagger-3">
+            class="btn-primary stagger-4">
             Brew a New Round
         </button>
     </div>
